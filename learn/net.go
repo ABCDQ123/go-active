@@ -7,8 +7,8 @@ import (
 )
 
 func Net_handler() {
-	http.HandleFunc("/", request_parse)      // 设置访问路由地址
-	err := http.ListenAndServe(":9090", nil) // 设置服务器监听端口
+	http.HandleFunc("/", request_parse)      // Rout Address
+	err := http.ListenAndServe(":9090", nil) // Port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
