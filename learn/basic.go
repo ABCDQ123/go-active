@@ -58,6 +58,9 @@ func New_slice_map() {
 	var map_int = make(map[int]int)
 	map_int[11] = 11
 	fmt.Println("slice: map ???:" + strconv.Itoa(map_int[11]))
+	for k, v := range map_int {
+		fmt.Println("slice: map key: ", k, "value: ", v)
+	}
 }
 
 type basic_student struct {
@@ -94,7 +97,7 @@ func New_interface() {
 }
 
 func new_go(is int) {
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 5; i++ {
 		runtime.Gosched()
 		fmt.Println("slice: new_go" + strconv.Itoa(is) + ": " + strconv.Itoa(i))
 		time.Sleep(1) //主协程 太快，执行完退出后，副协程无法执行
@@ -107,7 +110,7 @@ func New_goroutine() {
 }
 
 func new_channel(is int, c chan int) {
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 5; i++ {
 		fmt.Println("slice: new_chan" + strconv.Itoa(is) + ": " + strconv.Itoa(i))
 		time.Sleep(time.Second * 1)
 	}
