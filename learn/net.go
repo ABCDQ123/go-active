@@ -17,7 +17,7 @@ func Net_handler() {
 func request_parse(w http.ResponseWriter, r *http.Request) {
 	var err_r = r.ParseForm()
 	if err_r != nil {
-		fmt.Println("net: form erro_r")
+		fmt.Println("net: form err_r")
 	}
 	fmt.Println("net: Form= ", r.Form)
 	fmt.Println("net: path= ", r.URL.Path)
@@ -29,6 +29,6 @@ func request_parse(w http.ResponseWriter, r *http.Request) {
 	//}
 	var _, err_w = fmt.Fprintf(w, "Hello go-active")
 	if err_w != nil {
-		fmt.Println("net: form erro_w")
+		fmt.Println("net: form err_w")
 	}
 }
