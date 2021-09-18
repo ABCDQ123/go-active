@@ -9,4 +9,7 @@ go build
 上传交叉编译的文件   scp d:/文件 root@198.168.1.1:/root/文件夹
 修改文件权限        chmod -R 777 文件
 运行               nohup ./文件
+
+查看当前目录下文件 ls
+                ls -al
 ```
