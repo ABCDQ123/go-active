@@ -28,6 +28,11 @@ func http_parse(w http.ResponseWriter, r *http.Request) {
 		http_server_get_test(w, r)
 	case api_post_test:
 		http_server_post_test(w, r)
+	case api_live_checker:
+		_, err := w.Write([]byte("living"))
+		if err != nil {
+			return
+		}
 	default:
 		http_server_err(w, r)
 	}
@@ -39,6 +44,7 @@ type response_http_code struct {
 	err  string
 }
 
+const api_live_checker = "/live_check"
 const api_get_test = "/get_test"
 const api_post_test = "/post_test"
 
