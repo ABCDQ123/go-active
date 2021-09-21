@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"go-active/learn"
+	"go-active/learn_basic"
+	"go-active/learn_http"
 )
 
 func init() {
@@ -10,24 +11,21 @@ func init() {
 }
 
 func main() {
-	fmt.Println("*** main.go main()")
 	learns_go()
-	fmt.Println("*** main.go main() learns_go() end")
-	learns_net()
-	fmt.Println("*** main.go main() learns_net() end")
+	learns_http()
 }
 
 func learns_go() {
-	learn.New_const()     //变量常量
-	learn.New_enum()      //枚举
-	learn.New_array()     //数组
-	learn.New_slice_map() //slice
-	learn.New_struct()    //结构体
-	learn.New_interface() //接口
-	learn.New_goroutine() //并发
-	learn.New_channels()  //
+	learn_basic.New_const()     //变量常量
+	learn_basic.New_enum()      //枚举
+	learn_basic.New_array()     //数组
+	learn_basic.New_slice_map() //slice
+	learn_basic.New_struct()    //结构体
+	learn_basic.New_interface() //接口
+	learn_basic.New_goroutine() //并发
+	learn_basic.New_channels()  //channel
 }
 
-func learns_net() {
-	learn.Net_handler()
+func learns_http() {
+	learn_http.HTTP_handler()
 }
