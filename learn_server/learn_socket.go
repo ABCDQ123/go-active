@@ -98,7 +98,7 @@ func socket_tcp() {
 			err = nil
 			_, err = tcp_connect.Write([]byte(data_response))
 			if err != nil {
-				fmt.Println("net UDP WriteToUDP err", err.Error())
+				fmt.Println("net TCP Write err", err.Error())
 				return
 			}
 		}
