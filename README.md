@@ -36,15 +36,15 @@ HTTP等协议均由Socket实现
 ```
 
 ```
-***terminal 终端 golang交叉编译
-SET GOARCH=amd64  (>=win10 $env GOARCH="amd64)
-SET GOOS=linux    (>=win10 $env GOOS="linux")
-go build            
+终端 golang交叉编译
+1. SET GOARCH=amd64  (>=win10 $env GOARCH="amd64)
+2. SET GOOS=linux    (>=win10 $env GOOS="linux")
+3. go build            
 
-***terminal 终端 golang部署
-上传交叉编译的文件   scp d:/文件 root@198.168.1.1:/root/文件夹
-修改文件权限        chmod -R 777 文件
-后台运行            nohup ./文件
+终端 golang部署
+1. 上传交叉编译的文件    scp d:/文件 root@198.168.1.1:/root/文件夹
+2. 修改文件权限         chmod -R 777 文件
+3. 后台运行             nohup ./文件
 
-linux 查看当前目录下文件 ls 或 ls -al
+?. linux 查看当前目录下文件 ls 或 ls -al
 ```
