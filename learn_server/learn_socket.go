@@ -31,6 +31,7 @@ func socket_udp() {
 		err := udp_connect.Close()
 		if err != nil {
 			fmt.Println("net UDP Close err", err.Error())
+			return
 		}
 	}(udp_connect)
 	//recieve data
@@ -45,7 +46,7 @@ func socket_udp() {
 		data_string = strings.ToUpper(data_string)
 		fmt.Println("net UDP get data :", data_string)
 
-		data_response := "UDP did"
+		data_response := "net UDP did responseUDP did"
 		err = nil
 		_, err = udp_connect.WriteToUDP([]byte(data_response), udp_address_from)
 		if err != nil {
@@ -67,6 +68,7 @@ func socket_tcp() {
 		err := listener.Close()
 		if err != nil {
 			fmt.Println("net TCP listener Close err", err.Error())
+			return
 		}
 	}(listener)
 	//accept data
@@ -94,7 +96,7 @@ func socket_tcp() {
 			data_string = strings.ToUpper(data_string)
 			fmt.Println("net TCP get data :", data_string)
 
-			data_response := "TCP did"
+			data_response := "net TCP did response"
 			err = nil
 			_, err = tcp_connect.Write([]byte(data_response))
 			if err != nil {
