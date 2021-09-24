@@ -15,6 +15,7 @@ func init() {
 func main() {
 	go learns_basic()
 	go learns_http()
+	go learns_nat()
 	go learns_checker()
 	var wg sync.WaitGroup
 	wg.Add(1)
@@ -32,10 +33,14 @@ func learns_basic() {
 	learn_basic.New_channels()  //channel
 }
 
-func learns_checker() {
-	learn_server.Checker_server_loop()
-}
-
 func learns_http() {
 	learn_http.HTTP_handler()
+}
+
+func learns_nat() {
+	learn_server.Nat_Handler()
+}
+
+func learns_checker() {
+	learn_server.Checker_server_loop()
 }
